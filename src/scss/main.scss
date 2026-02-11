@@ -1,0 +1,14 @@
+body {
+  font-family: system-ui;
+}
+.header {
+  border-bottom: 3px solid hotpink;
+}
+
+@use "variables";
+@use "mixins";
+@use "base";
+@use "layout";
+@use "components";
+@use "themes";
+
