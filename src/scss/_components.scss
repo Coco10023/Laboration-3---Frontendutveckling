@@ -1,0 +1,14 @@
+.hero {
+  @extend %card;
+
+  .btn-primary {
+    @include button("primary");
+    &:hover {
+      background: darken($light-accent, 10%);
+    }
+  }
+}
+
+.card {
+  @extend %card;
+}
