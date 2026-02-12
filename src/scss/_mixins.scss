@@ -1,14 +1,19 @@
+@use "variables" as v;
+
 @mixin button($variant: "primary") {
   padding: .75rem 1rem;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
 
   @if $variant == "primary" {
-    background: $light-accent;
+    background: v.$light-accent;
     color: white;
   } @else {
     background: transparent;
-    border: 1px solid #ccc;
+    border-color: rgba(0,0,0,.2);
+    color: currentColor;
   }
 }

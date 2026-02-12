@@ -1,12 +1,18 @@
-%card {
-  padding: 1.5rem;
-  border-radius: 16px;
-  background: white;
+@use "variables" as v;
+
+* { 
+    box-sizing: border-box; 
 }
 
 body {
   margin: 0;
-  font-family: $font;
-  background: $light-bg;
-  color: $light-text;
+  font-family: v.$font;
+  background: v.$light-bg;
+  color: v.$light-text;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
 }

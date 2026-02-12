@@ -1,5 +1,6 @@
 @use "variables";
 @use "mixins";
+@use "placeholders";
 @use "base";
 @use "layout";
 @use "components";
@@ -8,9 +9,13 @@
 body {
   font-family: system-ui;
 }
-.header {
-  border-bottom: 3px solid hotpink;
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
 }
+
 
 
 

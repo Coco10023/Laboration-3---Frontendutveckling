@@ -1,14 +1,23 @@
+@use "placeholders" as *;
+@use "mixins" as m;
+@use "variables" as v;
+
+
 .hero {
   @extend %card;
 
   .btn-primary {
-    @include button("primary");
+    @include m.button("primary");
     &:hover {
-      background: darken($light-accent, 10%);
+      background: darken(v.$light-accent, 10%);
     }
   }
 }
 
 .card {
   @extend %card;
+}
+
+.muted {
+        color: lighten(v.$light-text, 25%);
 }
