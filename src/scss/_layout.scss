@@ -1,6 +1,24 @@
+.header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
 nav ul {
+  list-style: none;        // tar bort punkter
   display: flex;
   gap: 1rem;
+  margin: 0;               // tar bort default margin
+  padding: 0;              // tar bort default padding
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
