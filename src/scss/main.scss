@@ -1,3 +1,10 @@
+@use "variables";
+@use "mixins";
+@use "base";
+@use "layout";
+@use "components";
+@use "themes";
+
 body {
   font-family: system-ui;
 }
@@ -5,10 +12,5 @@ body {
   border-bottom: 3px solid hotpink;
 }
 
-@use "variables";
-@use "mixins";
-@use "base";
-@use "layout";
-@use "components";
-@use "themes";
+
 
