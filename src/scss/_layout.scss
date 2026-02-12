@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 * { box-sizing: border-box; }
 
 html, body {
@@ -11,7 +13,8 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: white;
+  background: v.$light-bg;
+  width: 100%;
 }
 
 .nav ul {
@@ -24,7 +27,7 @@ html, body {
 
 .nav a {
   text-decoration: none;
-  color: inherit;
+  color: v.$light-text;
   font-weight: 600;
   padding: .5rem .75rem;
   border-radius: 999px;
