@@ -1,28 +1,30 @@
 .header {
   padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
-nav ul {
-  list-style: none;        // tar bort punkter
+.nav ul {
+  list-style: none;
   display: flex;
   gap: 1rem;
-  margin: 0;               // tar bort default margin
-  padding: 0;              // tar bort default padding
+  margin: 0;
+  padding: 0;
 }
 
-nav a {
+.nav a {
   text-decoration: none;
   color: inherit;
-  font-weight: 500;
+  font-weight: 600;
+  padding: .5rem .75rem;
+  border-radius: 999px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.nav a:hover {
+  background: rgba(0,0,0,.06);
 }
 
 @media (max-width: 768px) {
-  nav ul {
+  .nav ul {
     flex-direction: column;
   }
 }
