@@ -10,8 +10,8 @@
     <header>
       <nav>
         <ul>
-          <li><a href="/">Start</a></li>
-          <li><a href="/sass.html">SASS</a></li>
+          <li><a href="./">Start</a></li>
+          <li><a href="sass.html">SASS</a></li>
           <li><a href = "#">Tjänster</a></li>
           <li><a href = "#">Projekt</a></li>
           <li><a href = "#">Kontakt</a></li>
@@ -20,9 +20,35 @@
     </header>
 
     <main>
-        <h1>SASS</h1>
+        <h1>Utvärdering av SASS</h1>
         <p>SASS (Syntactically Awesome Stylesheets) är en CSS-förprocessor som utökar funktionaliteten i vanlig CSS. Det introducerar variabler, nästlade regler, mixins och andra kraftfulla funktioner som gör det enklare att skriva och underhålla stilmallar.</p>
         <p class="muted">SASS hjälper utvecklare att organisera och återanvända kod, vilket leder till mer effektiv och skalbar CSS-utveckling.</p>
+        <br><br>
+        <h2>Erfarenheter av att använda CSS-preprocessor</h2>
+        <p>Att börja arbeta med SASS var lite ovant i början eftersom jag behövde sätta upp en build-process (i mitt fall via Vite) och vänja mig vid arbetssättet med partials och 
+           @use. När det väl var igång kändes utvecklingen snabbt mer strukturerad än med vanlig CSS. Jag märkte särskilt att det blev enklare att hålla ordning på styles när jag 
+           delade upp koden i flera filer (t.ex. base, layout, components och themes).
+        </p>
+        <br><br>
+        <h2>Fördelar med SASS</h2>
+        <p>Variabler ger konsekvens: Det blev enkelt att återanvända färger och typsnitt. När jag justerade färgschemat behövde jag bara ändra på ett ställe.
+           Bättre struktur med partials: Genom att dela upp CSS i flera partials blev projektet mer överskådligt och lättare att underhålla.
+           Återanvändbar kod med mixins: Mixins gjorde att jag kunde skapa återkommande mönster (t.ex. knappar) utan att upprepa samma kod överallt.
+           Nesting gör koppling tydligare: Nesting gjorde det lättare att se vilka regler som hör ihop (t.ex. en knapp inuti en hero-sektion).
+           Smidiga färgfunktioner: Funktioner som darken() och lighten() gjorde det snabbt att skapa hover-effekter och nyanser som passar både ljust och mörkt tema.
+        </p>
+        <br><br>
+        <h2>Nackdelar med SASS</h2>
+        <p>Kräver verktyg och build-steg: Till skillnad från vanlig CSS behöver man en kompilering/transpilering, vilket gör uppstarten lite mer komplex.
+           Risk för för mycket nesting: Om man nestar för djupt kan koden bli svårare att läsa och CSS-selektorerna kan bli onödigt specifika.
+           Vissa features kan bli röriga: Exempelvis @extend kan vara kraftfullt, men om man använder det slarvigt kan det skapa oväntade kombinationer av selektorer.
+        </p>
+        <br><br>
+        <h2>Sammanfattning</h2>
+        <p>Sammantaget tycker jag att SASS gör det lättare att bygga en mer strukturerad och skalbar styling, särskilt när webbplatsen växer. Den största tröskeln var att 
+           komma igång med verktygen och förstå hur @use och filstrukturen fungerar, men efter det blev arbetet både snabbare och mer organiserat jämfört med att skriva all 
+           CSS i en enda fil.
+        </p>
     </main>
 </body>
 
