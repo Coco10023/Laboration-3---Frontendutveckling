@@ -1,0 +1,85 @@
+@use "sass:color";
+@use "variables" as v;
+
+/* 1) Keyframes: text/bild-animation (glow/puls) */
+@keyframes glowPulse {
+  0%, 100% {
+    transform: translateY(0);
+    text-shadow: 0 0 0 rgba(91, 91, 214, 0);
+  }
+  50% {
+    transform: translateY(-6px);
+    text-shadow: 0 0 18px rgba(91, 91, 214, .55),
+                 0 0 36px rgba(91, 91, 214, .25);
+  }
+}
+
+.glow-text h2 {
+  animation: glowPulse 2.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+
+
+/* 2) Keyframes: rörligt objekt (boll) */
+.stage {
+  position: relative;
+  height: 140px;
+  border-radius: 16px;
+  background: color.adjust(v.$light-bg, $lightness: -4%);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+@keyframes moveAcross {
+  0%   { transform: translateX(-20%) translateY(0); }
+  50%  { transform: translateX(55vw) translateY(-18px); }
+  100% { transform: translateX(110%) translateY(0); }
+}
+
+.ball {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: v.$light-accent;
+  position: absolute;
+  left: 0;
+  top: 55%;
+  transform: translateY(-50%);
+  animation: moveAcross 3.8s linear infinite;
+}
+
+/* 3) Transition + transform (hover-interaktion) */
+.lift-on-hover {
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+}
+
+.lift-on-hover:hover {
+  transform: translateY(-12px) rotate(-1.03deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,.2);
+}
+
+/* 4) Klass för JS-triggad animation */
+@keyframes clickPulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.is-pulsing {
+  animation: clickPulse .45s ease-in-out 1;
+}
+
+/* Dark theme justeringar */
+@media (prefers-color-scheme: dark) {
+  .stage {
+    background: #1a1f33;
+  }
+  .ball {
+    background: v.$dark-accent;
+  }
+  .lift-on-hover:hover {
+    box-shadow: 0 18px 40px rgba(0,0,0,.55);
+  }
+}
