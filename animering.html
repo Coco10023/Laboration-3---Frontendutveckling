@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animering</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul>
+          <li><a href="./index.html">Start</a></li>
+          <li><a href="./sass.html">SASS</a></li>
+          <li><a href="./animering.html">Animering</a></li>
+          <li><a href="#">Projekt</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section class="anim-hero">
+      <h1 class="anim-title">Grafiska effekter med CSS</h1>
+      <p class="muted">Här testar jag keyframes, transform och transitions + interaktion med JavaScript.</p>
+
+      <button class="btn-primary js-pulse">Klicka för att trigga animation</button>
+    </section>
+
+    <section class="anim-grid">
+      <article class="card lift-on-hover">
+        <h2>Transition + Transform</h2>
+        <p>Hovera kortet för lyft/tilt och skugga.</p>
+      </article>
+
+      <article class="card glow-text">
+        <h2>Textanimation</h2>
+        <p>Rubriken får en mjuk glow/puls.</p>
+      </article>
+
+      <article class="card">
+        <h2>Rörligt objekt</h2>
+        <p>En “boll” rör sig över ytan med keyframes.</p>
+        <div class="stage">
+          <div class="ball" aria-hidden="true"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
