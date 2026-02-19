@@ -7,6 +7,27 @@ html, body {
   padding: 0;
 }
 
+.container {
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-block: 3rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-block: 3rem;
+}
+
+
 .header {
   padding: 1rem 2rem;
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -37,12 +58,6 @@ html, body {
   background: rgba(0,0,0,.06);
 }
 
-@media (max-width: 768px) {
-  .nav ul {
-    flex-direction: column;
-  }
-}
-
 header {
   margin: 0;
   padding: 0;
@@ -50,5 +65,26 @@ header {
 nav {
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .nav a {
+    padding: .75rem 1rem;
+   }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 

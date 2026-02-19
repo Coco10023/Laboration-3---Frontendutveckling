@@ -9,6 +9,7 @@
 
   <body>
     <header class = "header">
+      <div class = "container">
       <nav class = "nav">
         <ul>
           <li><a href="./index.html">Start</a></li>
@@ -18,13 +19,39 @@
           <li><a href = "#">Kontakt</a></li>
         </ul>
       </nav>
+      </div>
     </header>
 
-    <main>
-      <h1>Start</h1>
-      <img src="./images/hero.png" alt="Hero Image"/>
-      <img src ="./images/card.avif" alt="Card Image"/>
-    </main>
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>SASS Studio</h1>
+      <p>En fiktiv designstudio som bygger moderna och responsiva webbplatser med SASS och Vite.</p>
+      <a href="#" class="btn-primary">Kontakta oss</a>
+    </div>
+    <img src="./images/hero.png" alt="Hero Image"/>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h2>Tjänster</h2>
+      <p>Vi erbjuder frontendutveckling med fokus på struktur och design.</p>
+    </div>
+
+    <div class="card">
+      <h2>Projekt</h2>
+      <p>Se hur vi använder SASS för att skapa skalbar och modern styling.</p>
+    </div>
+
+    <div class="card">
+      <h2>Kontakt</h2>
+      <p>Hör av dig för att diskutera ditt nästa webbprojekt.</p>
+    </div>
+  </section>
+
+</main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
