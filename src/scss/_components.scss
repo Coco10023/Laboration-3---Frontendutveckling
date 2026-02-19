@@ -21,8 +21,9 @@
 .card {
   padding: 1.5rem;
   border-radius: 16px;
-  background: white;
-  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+  background: color.adjust(v.$light-bg, $ligthness: -5%);
+  color: v.$light-text;
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
 }
 
 
