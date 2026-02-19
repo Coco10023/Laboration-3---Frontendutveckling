@@ -3,39 +3,31 @@
 @use "variables" as v;
 @use "sass:color";
 
-
-
 .hero {
   @extend %card;
+  background: color.adjust(v.$light-bg, $lightness: -5%);
+  color: v.$light-text;
+  padding: 1.5rem;
+  border-radius: 16px;
 
   .btn-primary {
     @include m.button("primary");
+
     &:hover {
-      background: darken(v.$light-accent, 10%);
+      background: color.adjust(v.$light-accent, $lightness: -10%);
     }
   }
 }
 
-.hero {
-  background: color.adjust(v.$light-bg, $lightness: -5%);
-  border-radius: 16px;
-  padding: 1.5rem;
-}
-
-
 .card {
   @extend %card;
-}
-
-.card {
-  padding: 1.5rem;
-  border-radius: 16px;
   background: color.adjust(v.$light-bg, $lightness: -5%);
   color: v.$light-text;
+  padding: 1.5rem;
+  border-radius: 16px;
   box-shadow: 0 15px 35px rgba(0,0,0,.08);
 }
 
-
 .muted {
-        color: lighten(v.$light-text, 25%);
+  color: color.adjust(v.$light-text, $lightness: 25%);
 }
