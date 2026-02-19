@@ -4,6 +4,7 @@
 @use "sass:color";
 
 
+
 .hero {
   @extend %card;
 
@@ -14,6 +15,13 @@
     }
   }
 }
+
+.hero {
+  background: color.adjust(v.$light-bg, $lightness: -5%);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
 
 .card {
   @extend %card;
