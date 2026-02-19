@@ -1,15 +1,24 @@
 @use "variables" as v;
 
-
 @media (prefers-color-scheme: dark) {
-  .nav a {
-    color: v.$dark-text;
-  }
+
   body {
     background: v.$dark-bg;
     color: v.$dark-text;
   }
+
   .header {
     background: v.$dark-bg;
   }
+
+  .nav a {
+    color: v.$dark-text;
+  }
+
+  .card {
+    background: #1a1f33;   // mörkare kortbakgrund
+    color: v.$dark-text;
+  }
+
 }
+
