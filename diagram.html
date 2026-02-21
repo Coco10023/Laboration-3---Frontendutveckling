@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagram</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul>
+          <li><a href="./index.html">Start</a></li>
+          <li><a href="./sass.html">SASS</a></li>
+          <li><a href="./animering.html">Animering</a></li>
+          <li><a href="./diagram.html">Diagram</a></li>
+          <li><a href="./karta.html">Karta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <h1>Diagram</h1>
+    <p class="muted">Antagningsstatistik HT25 (hämtas med FetchAPI).</p>
+
+    <section class="card">
+      <h2>6 mest sökta kurser (HT25)</h2>
+      <canvas id="coursesChart" height="120"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>5 mest sökta program (HT25)</h2>
+      <canvas id="programsChart" height="120"></canvas>
+    </section>
+
+    <p>
+      <a class="btn-primary" href="./jsdoc/index.html">Öppna JSDoc</a>
+    </p>
+  </main>
+
+  <script type="module" src="./src/diagram.js"></script>
+</body>
+</html>
