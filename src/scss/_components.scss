@@ -31,3 +31,14 @@
 .muted {
   color: color.adjust(v.$light-text, $lightness: 25%);
 }
+
+#map {
+  height: 420px;
+  border-radius: 16px;
+  width: 100%;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+}

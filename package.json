@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docs": "jsdoc -r src -d public/jsdoc"
   },
   "devDependencies": {
     "jsdoc": "^4.0.5",
