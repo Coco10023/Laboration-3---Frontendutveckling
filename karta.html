@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karta</title>
+
+  <!-- Leaflet CSS via CDN -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul>
+          <li><a href="./index.html">Start</a></li>
+          <li><a href="./sass.html">SASS</a></li>
+          <li><a href="./animering.html">Animering</a></li>
+          <li><a href="./diagram.html">Diagram</a></li>
+          <li><a href="./karta.html">Karta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <h1>Karta</h1>
+    <p class="muted">Sök en plats (AJAX via Fetch → Nominatim) och visa med markör.</p>
+
+    <form class="card map-form" id="placeForm">
+      <label for="placeInput"><strong>Sök plats</strong></label>
+      <input id="placeInput" name="place" type="text" placeholder="t.ex. Sundsvall, Stockholm, MIUN..." required />
+      <button class="btn-primary" type="submit">Sök</button>
+      <p class="muted" id="mapStatus" aria-live="polite"></p>
+    </form>
+
+    <section class="card">
+      <div id="map" class = "map-container"></div>
+    </section>
+
+    <p>
+      <a class="btn-primary" href="./jsdoc/index.html">Öppna JSDoc</a>
+    </p>
+  </main>
+
+  <!-- Leaflet JS via CDN -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    defer
+  ></script>
+
+  <script type="module" src="./src/karta.js"></script>
+</body>
+</html>

@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "jsdoc": "^4.0.5",
     "sass": "^1.97.3",
     "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1"
   }
 }
