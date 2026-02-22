@@ -60,3 +60,17 @@ function renderBar(canvas, labels, values) {
     });
 }
 
+/**
+ * Renderar cirkeldiagram
+ * @param {HTMLCanvasElement} canvas
+ * @param {string[]} Labels
+ * @param {number[]} values
+ */
+function renderPie(canvas, labels, values) {
+    new Chart(canvas, {
+        type: "pie", 
+        data: { labels, datasets: [{ label: "Totalt antal sökande", data: values }] },
+        options: { responsive: true },
+    });
+}
+
