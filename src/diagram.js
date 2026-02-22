@@ -87,5 +87,10 @@ async function main() {
     if (programsCanvas) renderPie(programsCanvas, programs.labels, programs.values);
 }
 
+main().catch((err) => {
+    console.error(err);
+    alert("Kunde inte ladda diagrammen.");
+});
+
 
 
