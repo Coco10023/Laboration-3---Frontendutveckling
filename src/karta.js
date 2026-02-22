@@ -21,3 +21,13 @@ async function geocode(query) {
     name: data[0].display_name,
   };
 }
+
+function initMap() {
+  const map = L.map("map").setView([62.3908, 17.3069], 12); // Sundsvall
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors",
+  }).addTo(map);
+
+  const marker = L.marker([62.3908, 17.3069]).addTo(map);
+  return { map, marker };
+}
