@@ -9,3 +9,13 @@ async function fetchAdmissions() {
     if (!res.ok) throw new Error("kunde inte hämta antagningsdata.");
     return res.json();
 }
+
+/**
+ * Gör om "1989" -> 1989
+ * @param {string} value
+ * @returns {number}
+ */
+
+function toNumber(value) {
+    return Number(String(value).trum());
+}
