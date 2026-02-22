@@ -19,3 +19,25 @@ async function fetchAdmissions() {
 function toNumber(value) {
     return Number(String(value).trum());
 }
+
+/**
+ * Tar ut topp N för Kurs eller Program.
+ * @param {any[]} rows
+ * @param {"Kurs" | "Program"} type 
+ * @param {number} n 
+ * @returns {{Labels:string[], values:number[]}}
+ */
+
+function getTop(rows, type, n) {
+    const top = rows
+      .filter((r) => r.type === type)
+      .map((r) => ({ name: r.name, total: toNumber(r.applicantsTotal) }))
+      .filter((x) => x.name && Number.isFinite(x.total))
+      .sort((a, b) => b.total - a.total)
+      .slice(0, n); 
+
+      return {
+        labels: top.map((x) => x.name),
+        values: top.map((x) => x.total),
+      };
+}
