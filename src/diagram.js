@@ -41,3 +41,22 @@ function getTop(rows, type, n) {
         values: top.map((x) => x.total),
       };
 }
+
+/**
+ * Renderar stapeldiagram
+ * @param {HTMLCanvasElement} canvas
+ * @param {string[]} Labels
+ * @param {number[]} values
+ */
+function renderBar(canvas, labels, values) {
+    new Chart(canvas, {
+        type: "bar", 
+        data: { labels, datasets: [{ label: "Total antal sökande", data: values}]},
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false} }, 
+            scales: { y: { beginAtZero: true } },
+        },
+    });
+}
+
