@@ -74,3 +74,18 @@ function renderPie(canvas, labels, values) {
     });
 }
 
+async function main() {
+    const rows = await fetchAdmissions();
+
+    const courses = getTop(rows, "Kurs", 6);
+    const programs =  getTop(rows, "Program", 5);
+
+    const coursesCanvas = document.querySelector("#coursesChart");
+    const programsCanvas = document.querySelector("#programsChart");
+
+    if (coursesCanvas) renderBar(coursesCanvas, courses.labels, courses.values);
+    if (programsCanvas) renderPie(programsCanvas, programs.labels, programs.values);
+}
+
+
+
