@@ -31,3 +31,12 @@ function initMap() {
   const marker = L.marker([62.3908, 17.3069]).addTo(map);
   return { map, marker };
 }
+
+async function main() {
+    const form = document.querySelector("#placeForm");
+    const input = document.querySelector("#placeInput");
+    const status = document.querySelector("#mapStatus");
+    if (!form || !input || !status) return;
+
+    const { map, marker } = initMap();
+}
