@@ -39,4 +39,13 @@ async function main() {
     if (!form || !input || !status) return;
 
     const { map, marker } = initMap();
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const q = input.value.trim();
+    if (!q) return;
+
+    status.textContent = "Söker...";
+});
 }
+
