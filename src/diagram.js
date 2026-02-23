@@ -17,7 +17,7 @@ async function fetchAdmissions() {
  */
 
 function toNumber(value) {
-    return Number(String(value).trum());
+    return Number(String(value).trim());
 }
 
 /**
