@@ -46,6 +46,25 @@ form.addEventListener("submit", async (e) => {
     if (!q) return;
 
     status.textContent = "Söker...";
+
+    try {
+        const place = await geocode(q);
+        
+        if (!place) {
+            status.textContent = "Ingen plats hittades";
+            return;
+        }
+
+        marker.setLatLng([place.lat, place.lon]);
+        map.setView([place.lat, place.lon], 13);
+        status.textContent = `Visar: ${place.name}`;
+    }   
+    
+        catch (err) {
+            console.error(err);
+            status.textContent = "Något fick fel";
+    }
 });
 }
 
+main();
