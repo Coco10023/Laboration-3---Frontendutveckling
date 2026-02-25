@@ -2,25 +2,37 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 /**
- * Hämtar koordinater via Nominatim.
+ * Hämtar koordinater via Open-Meteo Geocoding API.
  * @param {string} query
  * @returns {Promise<{lat:number, lon:number, name:string} | null>}
  */
 async function geocode(query) {
   const url =
-    "https://nominatim.openstreetmap.org/search?format=json&q=" +
-    encodeURIComponent(query);
+    "https://geocoding-api.open-meteo.com/v1/search?" +
+    new URLSearchParams({
+      name: query,
+      count: "1",
+      language: "sv",
+      format: "json",
+    });
 
   const res = await fetch(url, { headers: { Accept: "application/json" } });
+
+  // OBS: backticks här (`)
   if (!res.ok) throw new Error(`Kunde inte söka plats: ${res.status}`);
 
   const data = await res.json();
-  if (!Array.isArray(data) || data.length === 0) return null;
+  const first = data?.results?.[0];
+  if (!first) return null;
+
+  const label = [first.name, first.admin1, first.country]
+    .filter(Boolean)
+    .join(", ");
 
   return {
-    lat: Number(data[0].lat),
-    lon: Number(data[0].lon),
-    name: data[0].display_name,
+    lat: Number(first.latitude),
+    lon: Number(first.longitude),
+    name: label || query,
   };
 }
 
@@ -32,6 +44,11 @@ function initMap() {
   }).addTo(map);
 
   const marker = L.marker([62.3908, 17.3069]).addTo(map);
+
+  setTimeout(() => {
+    map.invalidateSize();
+  }, 100);
+
   return { map, marker };
 }
 
@@ -60,6 +77,7 @@ async function main() {
 
       marker.setLatLng([place.lat, place.lon]);
       map.setView([place.lat, place.lon], 13);
+      setTimeout(() => map.invalidateSize(),100);
       status.textContent = `Visar: ${place.name}`;
     } catch (err) {
       console.error(err);

@@ -32,14 +32,24 @@
   color: color.adjust(v.$light-text, $lightness: 25%);
 }
 
-#map {
-  height: 420px;
-  border-radius: 16px;
-  width: 100%;
+.card--map {
+  padding: 0;
   overflow: hidden;
-
-  @media (max-width: 768px) {
-    height: 300px;
-  }
 }
 
+#map {
+  height: 420px;
+  width: 100%;
+}
+
+#map, 
+.card--map {
+  transition:none !important;
+  animation:none !important;
+}
+
+  @media (max-width: 768px) {
+    #map {
+      height: 300px;
+    }
+  }

@@ -4,13 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karta</title>
-
-  <!-- Leaflet CSS via CDN -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
 </head>
+
 <body>
   <header class="header">
     <div class="container">
@@ -31,7 +26,7 @@
 
   <main class="container main">
     <h1>Karta</h1>
-    <p class="muted">Sök en plats (AJAX via Fetch → Nominatim) och visa med markör.</p>
+    <p class="muted">Sök en plats (AJAX via Fetch → Open-Meteo) och visa med markör.</p>
 
     <form class="card map-form" id="placeForm">
       <label for="placeInput"><strong>Sök plats</strong></label>
@@ -40,7 +35,7 @@
       <p class="muted" id="mapStatus" aria-live="polite"></p>
     </form>
 
-    <section class="card">
+    <section class="card card--map">
       <div id="map"></div>
     </section>
 
@@ -49,8 +44,7 @@
     </p>
   </main>
 
-  <script src="karta-DOhheaAU.js"></script>
-
-  <script type="module" src="./src/karta.js"></script>
+  <script type = "module" src="/src/main.js"> </script>
+  <script type = "module" src = "/src/karta.js"></script>
 </body>
 </html>
