@@ -36,21 +36,27 @@ async function geocode(query) {
   };
 }
 
+
 function initMap() {
-  const map = L.map("map").setView([62.3908, 17.3069], 12);
+  const mapEl = document.getElementById("map");
+  if (!mapEl) throw new Error("#map saknas i HTML");
+
+  // default view
+  const start = [62.3908, 17.3069];
+  const map = L.map(mapEl, { zoomControl: true}).setView(start,12);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors",
   }).addTo(map);
 
-  const marker = L.marker([62.3908, 17.3069]).addTo(map);
+  const marker = L.marker(start).addTo(map);
 
-  setTimeout(() => {
-    map.invalidateSize();
-  }, 100);
-
+  setTimeout(() => 
+map.invalidateSize(), 250);
+  
   return { map, marker };
 }
+
 
 async function main() {
   const form = document.querySelector("#placeForm");
@@ -76,8 +82,9 @@ async function main() {
       }
 
       marker.setLatLng([place.lat, place.lon]);
-      map.setView([place.lat, place.lon], 13);
-      setTimeout(() => map.invalidateSize(),100);
+      map.setView([place.lat, place.lon], 13, { animate: true });
+
+      setTimeout(() => map.invalidateSize(),200);
       status.textContent = `Visar: ${place.name}`;
     } catch (err) {
       console.error(err);
@@ -86,4 +93,8 @@ async function main() {
   });
 }
 
-main();
+window.addEventListener("load", () => 
+{
+  main();
+});
+
