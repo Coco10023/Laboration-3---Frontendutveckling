@@ -18,8 +18,7 @@ L.Icon.Default.mergeOptions({
  * Hämtar koordinater för en plats via Open-Meteo Geocoding API.
  * @async
  * @param {string} query - Platsnamn som användaren söker efter tex "Stockholm"
- * @returns {Promise<{lat:number, lon:number, name:string} | null>}
- * Returnerar ett objekt med lat/Ion och en label, eller null om ingen träff hittades.
+ * @returns {Promise<{lat:number, lon:number, name:string} | null>} Returnerar ett objekt med lat/lon och en label, eller null om ingen träff hittades.
  * @throws {Error} Om API-anropet misslyckats (tex nätverksfel eller 4xx/5xx). 
  */
 
@@ -52,7 +51,7 @@ async function geocode(query) {
 
 /**
  * Initierar Leaflet-kartan, lägger till  tile-layer och en startmarkör. 
- * @returns {{map: import("leaflet").Map, marker: import("leaflet").Marker}}
+ * @returns {{map: any, marker: any}}
  * Ett objekt med kartinstansen och markören så de kan uppdateras vid sökning. 
  * @throws {Error} Om #map-elementet saknas i HTML.
  */
@@ -81,7 +80,7 @@ map.invalidateSize(), 250);
 /**
  * Startar kart-sidan: sätter upp karta och kopplar formuläre till sökfunktionen. 
  * @async
- * @returns {Promise<void}
+ * @returns {Promise<void>}
  */
 
 async function main() {
