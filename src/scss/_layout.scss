@@ -29,9 +29,9 @@ html, body {
 
 
 .header {
-  padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(0,0,0,.1);
   position: sticky;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.1);
   top: 0;
   z-index: 1000;
   background: v.$light-bg;
@@ -52,6 +52,7 @@ html, body {
   font-weight: 600;
   padding: .5rem .75rem;
   border-radius: 999px;
+  background: rgba(0, 0, 0, .10);
 }
 
 .nav a:hover {
@@ -67,16 +68,18 @@ nav {
   padding: 0;
 }
 
-@media (max-width: 768px) {
-  .nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: .5rem;
-  }
-  .nav a {
-    padding: .75rem 1rem;
-   }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
+
 
 @media (max-width: 900px) {
   .hero {
@@ -85,6 +88,66 @@ nav {
 
   .cards {
     grid-template-columns: 1fr;
+  }
+}
+
+
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-toggle {
+  display: none; // syns bara på mobil
+  font-size: 1.25rem;
+  padding: .5rem .75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.15);
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+}
+
+  .nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + .5rem);
+    background: v.$light-bg;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 16px;
+    padding: .75rem;
+    display: none;
+    z-index: 2000;
+  }
+
+  .nav.is-open {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .nav a {
+    display: block;
+    padding: .75rem 1rem;   // touchvänligt
+    border-radius: 12px;
   }
 }
 

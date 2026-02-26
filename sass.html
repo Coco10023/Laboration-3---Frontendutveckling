@@ -8,23 +8,29 @@
 
 <body>
     <header class = "header">
-      <div class = "container">
-      <nav class = "nav">
-        <ul>
-          <li><a href="./index.html">Start</a></li>
-          <li><a href="./sass.html">SASS</a></li>
-          <li><a href = "#">Tjänster</a></li>
-          <li><a href = "#">Projekt</a></li>
-          <li><a href = "#">Kontakt</a></li>
-          <li><a href="./animering.html">Animering</a></li>
-          <li><a href = "./diagram.html">Diagram</a></li>
-          <li><a href = "./karta.html">Karta</a></li>
-        </ul>
-      </nav>
+      <div class = "container header__inner">
+
+        <button class = "nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">
+          <span class="sr-only">Öppna meny</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <nav class = "nav" id="mainNav">
+          <ul>
+            <li><a href="./index.html">Start</a></li>
+            <li><a href="./sass.html">SASS</a></li>
+            <li><a href = "#">Tjänster</a></li>
+            <li><a href = "#">Projekt</a></li>
+            <li><a href = "#">Kontakt</a></li>
+            <li><a href="./animering.html">Animering</a></li>
+            <li><a href = "./diagram.html">Diagram</a></li>
+            <li><a href = "./karta.html">Karta</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <main class = "main">
+    <main class = "container main">
         <h1>Utvärdering av SASS</h1>
         <p>SASS (Syntactically Awesome Stylesheets) är en CSS-förprocessor som utökar funktionaliteten i vanlig CSS. Det introducerar variabler, nästlade regler, mixins och andra kraftfulla funktioner som gör det enklare att skriva och underhålla stilmallar.</p>
         <p class="muted">SASS hjälper utvecklare att organisera och återanvända kod, vilket leder till mer effektiv och skalbar CSS-utveckling.</p>
